@@ -16,7 +16,7 @@ If you don't want to install its dependencies system-wide, try installing it in 
 
 ## Theory ##
 
-Instapaper provides three way for a program to see your archive:
+Instapaper provides three ways for a program to see your archive:
 
 * a manually downloaded CSV export
 * the Full API (subscribers only)
@@ -42,7 +42,7 @@ Because `instapaperout` uses your secret Instapaper feeds, no configuration is n
 
 ## Usage ##
 
-To use `instapaper`, you'll need the secret RSS URL of the Instapaper folder you want to save.
+To use `instapaperout`, you'll need the secret RSS URL of the Instapaper folder you want to save.
 
 ### Finding the RSS URL ###
 
