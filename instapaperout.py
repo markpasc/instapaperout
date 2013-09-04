@@ -13,6 +13,9 @@ import arghlog
 import requests
 
 
+__version__ = '1.0'
+
+
 def instapaper_out(exportpath: 'name of the directory to export to',
                    rss_url: 'URL of the RSS file to same items from',
                    noinput: "save only the first results and don't ask for input" =False):
@@ -64,6 +67,4 @@ def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.DEBUG)
-    logging.getLogger().setLevel(logging.DEBUG)
     main()
