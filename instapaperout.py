@@ -46,6 +46,7 @@ def instapaper_out(exportpath: 'name of the directory to export to',
             filename = re.sub(r'\W+', '-', url) + '.json'
             with open(join(exportpath, filename), 'w') as f:
                 json.dump(item, f, sort_keys=True, indent=4)
+                f.write('\n')
             logging.debug("Wrote %r to %s", item['title'], filename)
 
         if noinput or not confirm("Saved through '{}'. Continue".format(item['title']), default=True):
