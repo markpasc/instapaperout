@@ -38,7 +38,7 @@ def instapaper_out(exportpath: 'name of the directory to export to',
                 'created_at': created_at.isoformat(),
             }
 
-            filename = re.sub(r'\W+', '-', url) + '.html'
+            filename = re.sub(r'\W+', '-', url) + '.json'
             with open(join(exportpath, filename), 'w') as f:
                 json.dump(item, f, sort_keys=True, indent=4)
             logging.debug("Wrote %r to %s", item['title'], filename)
