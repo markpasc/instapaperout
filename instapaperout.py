@@ -13,7 +13,8 @@ import requests
 
 
 def instapaper_out(exportpath: 'name of the directory to export to',
-                   rss_url: 'URL of the RSS file to same items from'):
+                   rss_url: 'URL of the RSS file to same items from',
+                   noinput: "save only the first results and don't ask for input" =False):
     os.makedirs(exportpath, exist_ok=True)
 
     while True:
@@ -43,7 +44,7 @@ def instapaper_out(exportpath: 'name of the directory to export to',
                 json.dump(item, f, sort_keys=True, indent=4)
             logging.debug("Wrote %r to %s", item['title'], filename)
 
-        if not confirm("Saved through '{}'. Continue".format(item['title']), default=True):
+        if noinput or not confirm("Saved through '{}'. Continue".format(item['title']), default=True):
             logging.debug("Oops, user answered no, stopping!")
             break
 
