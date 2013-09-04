@@ -4,6 +4,7 @@ import logging
 import os
 from os.path import join
 import re
+from urllib.parse import urljoin
 from xml.etree import ElementTree
 
 import argh
@@ -16,6 +17,9 @@ def instapaper_out(exportpath: 'name of the directory to export to',
                    rss_url: 'URL of the RSS file to same items from',
                    noinput: "save only the first results and don't ask for input" =False):
     os.makedirs(exportpath, exist_ok=True)
+
+    # Make sure the RSS URL is a whole URL.
+    rss_url = urljoin('http://www.instapaper.com/', rss_url)
 
     while True:
         res = requests.get(rss_url)
