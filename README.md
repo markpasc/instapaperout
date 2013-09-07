@@ -99,3 +99,25 @@ The last listed item will be the last item in the folder. Delete through it and 
     $
 
 See `instapaperout --help` for full help.
+
+### Upload to Pinboard (or somewhere else) ###
+
+After exporting, use the `furthermore/pinboardin.py` script or one like it to import your archived bookmarks to [Pinboard](https://pinboard.in/) or another service.
+
+    $ python furthermore/pinboardin.py markpasc ./unread/ --unread
+    $ python furthermore/pinboardin.py markpasc ./starred/ --starred
+    $ python furthermore/pinboardin.py -v -v markpasc ./archive/
+    DEBUG Found 1582 .json files in ./archive/, let's get started!
+    ...
+    DEBUG Saved bookmark 'Typography for Lawyers' to pinboard
+    DEBUG Saved bookmark 'The War for Catch-22 | Culture | Vanity Fair' to pinboard
+    DEBUG Saved bookmark 'Vlambeer | Random level generation in Wasteland Kings' to pinboard
+    ^C
+    $ python furthermore/pinboardin.py -v -v markpasc ./archive/ --skip http-www-vlambeer-com-2013-04-02-random-level-generation-in-wasteland-kings-.json
+    DEBUG Skipping 1226 files to start after 'http-www-vlambeer-com-2013-04-02-random-level-generation-in-wasteland-kings-.json'
+    DEBUG Found 356 .json files in ./archive/, let's get started!
+    DEBUG Saved bookmark 'The Inside Story of How John Carter Was Doomed by Its First Trailer -- Vulture' to pinboard
+    ...
+    $
+
+See `python furthermore/pinboardin.py --help` for its full help.
